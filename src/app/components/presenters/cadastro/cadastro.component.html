@@ -1,0 +1,53 @@
+<form [formGroup]="todoForm" novalidate (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>Cadastro de Eventos</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Autor" formControlName="author">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <textarea matInput placeholder="Descrição" formControlName="description"></textarea>
+            <mat-error *ngIf="todoForm.controls['description'].hasError('required')">
+              Descrição é <strong>Obrigatória!</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>   
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <mat-select placeholder="Categoria" formControlName="category">
+                <mat-option *ngFor="let categories of category" [value]="categories">
+                  {{ categories }}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="todoForm.controls['category'].hasError('required')">
+                Categoria é <strong>Obrigatória!</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <app-date [group]="todoForm" name="date"></app-date>
+          </div>
+        </div>
+        <div class="col">
+          <mat-radio-group formControlName="done">
+            <mat-radio-button value="true">Concluido</mat-radio-button>
+            <mat-radio-button value="false">Não Concluído</mat-radio-button>
+          </mat-radio-group>
+        </div>
+
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit">Salvar</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

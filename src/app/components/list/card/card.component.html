@@ -1,0 +1,37 @@
+<div class="view">
+    <mat-card class='example-card'>
+        <mat-card-header>
+            <mat-card-title><strong>{{author}}</strong></mat-card-title>
+            <mat-card-subtitle class="subtitle">
+              <div class="subtitle-date">
+                <strong>{{data | date:"dd/MM/yyyy"}}</strong>
+              </div>
+              <div class="subtitle-category">
+                {{category}}
+              </div>
+            </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content class="mat-card-content">
+            <p class="card-description">
+              {{description}}
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <div class="bottom-content">
+              <div class="done">
+                <h3 *ngIf="feito"><strong>Tarefa concluida</strong></h3>
+                <h3 *ngIf="!feito"><strong>Tarefa não concluida</strong></h3>
+              </div>
+              <div class="button">
+                <button mat-button aria-label="concluido" (click)="concluirTodo(todo)" color="primary">Concluído</button>
+                <button mat-icon-button (click)="editTodo(todo)" aria-label="Editar">
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <button class="btn" mat-icon-button (click)="deleteTodo(todo)" color="warn" aria-label="Deletar">
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </div>
+            </div>
+          </mat-card-actions>
+    </mat-card>
+</div>

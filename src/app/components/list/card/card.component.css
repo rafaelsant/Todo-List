@@ -1,0 +1,44 @@
+.btn {
+  height: 80%;
+}
+.view {
+  width: 400px;
+  padding: 2%;
+}
+.subtitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.subtitle-date {
+  float: left;
+}
+
+.subtitle-category {
+  float: right;
+}
+.card-content {
+  align-items: center;
+  justify-content: center;
+}
+.card-description {
+  padding: 15px;
+  font-weight: 400;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+.bottom-content {
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+.button {
+  align-items: center;
+  justify-content: center;
+}
+.done {
+  float: right;
+  position: absolute;
+  right: 13%;
+  bottom: -1%;
+}
